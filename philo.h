@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/10/15 08:21:22 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/10/15 10:43:59 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ void	init_philo(t_philo *philo, char **av, int ac);
 
 char	*ft_strdup(const char *s1);
 size_t	ft_strlen(const char *s);
+int		ft_isdigit(int c);
+int		ft_atoi(const char *str);
 
 #endif
