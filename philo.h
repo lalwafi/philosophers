@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/10/15 10:43:59 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/10/16 14:19:17 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,17 @@
 
 typedef struct philo
 {
-	char	*nop; //number of philosophers
-	char	*ttd;
-	char	*tte;
-	char	*tts;
-	char	*meal_count; //how many meals each philosopher should eat
+	int	nop; //number of philosophers
+	int	ttd;
+	int	tte;
+	int	tts;
+	int	meal_count; //how many meals each philosopher should eat
 } t_philo;
 
 // functions
 
 void	init_philo(t_philo *philo, char **av, int ac);
+void	check_args(char **av, int ac);
 
 // utils
 

@@ -4,7 +4,7 @@ CFLAGS  = -Wall -Werror -Wextra -g3 -fsanitize=address
 
 # LIBFTLYALL = libft_lyall/libft.a
 
-SRCS    = utils/ft_strdup.c philo.c
+SRCS    = philo.c utils/ft_strdup.c utils/ft_atoi.c utils/ft_isdigit.c
 
 OBJ     = $(SRCS:.c=.o)
 
