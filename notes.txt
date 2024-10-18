@@ -1,0 +1,3 @@
+handle overflow
+
+one philosopher is gonna only have one fork, so just sleep the time to die and kill him
