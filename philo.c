@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:35:35 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/10/23 00:57:22 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/10/29 03:26:08 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,25 @@ void	check_args(char **av, int ac)
 	}
 }
 
+void	run_em(t_philos	**philos, )
+{
+	
+}
+
 void	create_them_threads(t_philos **philos, int nop)
 {
 	int	i;
 
-	i = nop - 1;
+	i = 0;
 	while (--i )
+	{
+		pthread_create(&philos[i]->thread_id, NULL, run_em, &philos[i]);
+	}
+}
+
+void	whats_the_time( start_time)
+{
+	
 }
 
 int	main(int ac, char **av)

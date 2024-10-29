@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/10/23 00:56:06 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/10/29 09:41:45 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct env
 	int		ttd;
 	int		tte;
 	int		tts;
+	typedef timeval	start_time;
 	int		meal_count; //how many meals each philosopher should eat
 	int		*forks;
 } t_env;
