@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/10/31 17:42:17 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/02 07:42:33 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,25 @@ typedef struct philos
 	int			meals;
 	int			left_fork;
 	int			right_fork;
-	pthread_t	thread_id;	
+	pthread_t	thread_id;
+	t_env		env;	
 } t_philos;
 
-typedef struct forks
-{
-	int	
-};
+// typedef struct forks
+// {
+// 	int	
+// };
 
 
 // functions
 
 void	init_env(t_env *env, char **av, int ac);
 void	check_args(char **av, int ac);
+void	*run_em(void *idk);
+void	create_them_threads(t_philos **philos, int nop);
+size_t	whats_the_time(struct timeval start_time);
+void	sleep_ms(struct timeval start_time, long int sleep_ms);
+void	init_philos(t_philos **philos, t_env env);
 
 // utils
 
