@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/02 07:42:33 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/03 14:39:24 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct env
 	struct timeval	start_time;
 	int		meal_count; //how many meals each philosopher should eat
 	int		*forks;
+	pthread_mutex_t	lock;
 } t_env;
 
 typedef struct philos
@@ -51,13 +52,14 @@ typedef struct philos
 
 // functions
 
-void	init_env(t_env *env, char **av, int ac);
-void	check_args(char **av, int ac);
-void	*run_em(void *idk);
-void	create_them_threads(t_philos **philos, int nop);
-size_t	whats_the_time(struct timeval start_time);
-void	sleep_ms(struct timeval start_time, long int sleep_ms);
-void	init_philos(t_philos **philos, t_env env);
+void		init_env(t_env *env, char **av, int ac);
+void		check_args(char **av, int ac);
+void		*run_em(void *idk);
+void		create_them_threads(t_philos **philos, int nop);
+size_t		whats_the_time(struct timeval start_time);
+void		sleep_ms(struct timeval start_time, long int sleep_ms);
+t_philos	**init_philos(t_env env);
+void		free_all(t_philos **philos, t_env env);
 
 // utils
 
