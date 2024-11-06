@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:35:35 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/03 15:06:51 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/06 11:53:45 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,16 @@ void	*run_em(void *idk)
 	t_philos *philos = idk;
 
 	i = philos->env.nop;
-	while (--i >= 0)
+	
+	if (philos->index % 2 == 0)
+		sleep_ms(philos->env.start_time, 200);
+	while (1)
 	{
-		if (philos->index == i)
-		{
-			pthread_mutex_lock(&philos->env.lock);
-			printf("%d - %ld\n", philos->index, whats_the_time(philos->env.start_time));
-			pthread_mutex_unlock(&philos->env.lock);
-			// sleep_ms(philos->env.start_time, 200);
-		}
-		else
-			sleep_ms(philos->env.start_time, 200);
+		pthread_mutex_lock(&philos->env.lock);
+		printf("%d - %ld\n", philos->index, whats_the_time(philos->env.start_time));
+		take_fork(&philos);
+		pthread_mutex_unlock(&philos->env.lock);
+		sleep_ms(philos->env.start_time, 200);
 	}
 	return (NULL);
 }
@@ -74,6 +73,17 @@ void	create_them_threads(t_philos **philos, int nop)
 		pthread_join(philos[i]->thread_id, NULL);
 }
 
+void	one_philo(char **av)
+{
+	struct timeval	start;
+
+	gettimeofday(&start, NULL);
+	printf("%ld 1 has taken a fork\n", whats_the_time(start));
+	sleep_ms(start, ft_atoi(av[2]));
+	printf("%ld 1 died\n", whats_the_time(start));
+	exit(EXIT_SUCCESS);
+}
+
 int	main(int ac, char **av)
 {
 	t_env 		env;
@@ -82,6 +92,8 @@ int	main(int ac, char **av)
 	if (ac < 5 || ac > 6)
 		(printf("%s\n", ARGERROR), exit(EXIT_FAILURE));
 	check_args(av, ac);
+	if (ft_atoi(av[1]) == 1)
+		one_philo(av);
 	init_env(&env, av, ac);
 	philos = init_philos(env);
 	if (!philos)

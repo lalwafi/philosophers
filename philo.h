@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/03 14:39:24 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/06 11:11:24 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,16 @@ typedef struct philos
 	int			meals;
 	int			left_fork;
 	int			right_fork;
+	int			live;
 	pthread_t	thread_id;
 	t_env		env;	
 } t_philos;
 
-// typedef struct forks
-// {
-// 	int	
-// };
+typedef struct forks
+{
+	int	claimed;
+	// i think instead of this make it an integer array forks[index] = 0/1
+};
 
 
 // functions
@@ -60,6 +62,7 @@ size_t		whats_the_time(struct timeval start_time);
 void		sleep_ms(struct timeval start_time, long int sleep_ms);
 t_philos	**init_philos(t_env env);
 void		free_all(t_philos **philos, t_env env);
+void		one_philo(char **av);
 
 // utils
 
