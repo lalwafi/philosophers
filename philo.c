@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:35:35 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/06 11:53:45 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/07 18:00:45 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,22 @@ void	check_args(char **av, int ac)
 	}
 }
 
-void	*run_em(void *idk)
-{
-	int	i;
-	t_philos *philos = idk;
-
-	i = philos->env.nop;
+// void	*run_em(void *idk)
+// {
+// 	t_philos *philos = idk;
 	
-	if (philos->index % 2 == 0)
-		sleep_ms(philos->env.start_time, 200);
-	while (1)
-	{
-		pthread_mutex_lock(&philos->env.lock);
-		printf("%d - %ld\n", philos->index, whats_the_time(philos->env.start_time));
-		take_fork(&philos);
-		pthread_mutex_unlock(&philos->env.lock);
-		sleep_ms(philos->env.start_time, 200);
-	}
-	return (NULL);
-}
+// 	if (philos->index % 2 == 0)
+// 		sleep_ms(200);
+// 	while (1)
+// 	{
+// 		pthread_mutex_lock(&philos->env.lock);
+// 		printf("%d - %ld\n", philos->index, whats_the_time(philos->env.start_time));
+// 		take_forks(&philos);
+// 		pthread_mutex_unlock(&philos->env.lock);
+// 		sleep_ms(200);
+// 	}
+// 	return (NULL);
+// }
 
 void	create_them_threads(t_philos **philos, int nop)
 {
@@ -66,7 +63,7 @@ void	create_them_threads(t_philos **philos, int nop)
 	i = -1;
 	while (++i < nop)
 	{
-		pthread_create(&philos[i]->thread_id, NULL, run_em, philos[i]);
+		pthread_create(&philos[i]->thread_id, NULL, process, philos[i]);
 	}
 	i = -1;
 	while (++i < nop)
@@ -79,7 +76,7 @@ void	one_philo(char **av)
 
 	gettimeofday(&start, NULL);
 	printf("%ld 1 has taken a fork\n", whats_the_time(start));
-	sleep_ms(start, ft_atoi(av[2]));
+	sleep_ms(ft_atoi(av[2]));
 	printf("%ld 1 died\n", whats_the_time(start));
 	exit(EXIT_SUCCESS);
 }

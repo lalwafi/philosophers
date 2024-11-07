@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/06 11:11:24 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/07 18:16:45 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,51 +24,61 @@
 
 typedef struct env
 {
-	int		nop; //number of philosophers
-	int		ttd;
-	int		tte;
-	int		tts;
+	int				nop; //number of philosophers
+	unsigned long	ttd;
+	unsigned long	tte;
+	unsigned long	tts;
 	struct timeval	start_time;
-	int		meal_count; //how many meals each philosopher should eat
-	int		*forks;
+	int				meal_count; //how many meals each philosopher should eat
+	int				*forks;
+	int				dead;
 	pthread_mutex_t	lock;
 } t_env;
 
 typedef struct philos
 {
-	int			index;
-	int			meals;
-	int			left_fork;
-	int			right_fork;
-	int			live;
-	pthread_t	thread_id;
+	int				index;
+	int				meals;
+	int				left_fork;
+	int				right_fork;
+	int				dead_alive;
+	struct timeval	last_meal;
+	pthread_t		thread_id;
+	pthread_mutex_t	fork_lock;
+	pthread_mutex_t	print_lock;
+	pthread_mutex_t	check_lock;
 	t_env		env;	
 } t_philos;
-
-typedef struct forks
-{
-	int	claimed;
-	// i think instead of this make it an integer array forks[index] = 0/1
-};
 
 
 // functions
 
-void		init_env(t_env *env, char **av, int ac);
 void		check_args(char **av, int ac);
-void		*run_em(void *idk);
-void		create_them_threads(t_philos **philos, int nop);
-size_t		whats_the_time(struct timeval start_time);
-void		sleep_ms(struct timeval start_time, long int sleep_ms);
-t_philos	**init_philos(t_env env);
-void		free_all(t_philos **philos, t_env env);
 void		one_philo(char **av);
+void		init_env(t_env *env, char **av, int ac);
+t_philos	**init_philos(t_env env);
+void		create_them_threads(t_philos **philos, int nop);
+void		*run_em(void *idk);
+void		*process(void *ptr);
+
+// process
+
+void		take_forks(t_philos **philos);
+void		eat(t_philos **philo);
 
 // utils
 
-char	*ft_strdup(const char *s1);
-size_t	ft_strlen(const char *s);
-int		ft_isdigit(int c);
-int		ft_atoi(const char *str);
+char		*ft_strdup(const char *s1);
+size_t		ft_strlen(const char *s);
+int			ft_isdigit(int c);
+int			ft_atoi(const char *str);
+
+// utils for philo
+
+void		free_all(t_philos **philos, t_env env);
+size_t		whats_the_time(struct timeval start_time);
+void		sleep_ms(long int sleep_ms);
+void		print_smth(t_philos *philo, char c);
+int			check_dead(t_philos *philo);
 
 #endif

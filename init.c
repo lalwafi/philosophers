@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:53:42 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/03 14:59:04 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/07 17:21:03 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	init_env(t_env *env, char **av, int ac)
 	env->ttd = ft_atoi(av[2]);
 	env->tte = ft_atoi(av[3]);
 	env->tts = ft_atoi(av[4]);
+	env->dead = 0;
 	if (pthread_mutex_init(&env->lock, NULL))
 		exit(EXIT_FAILURE);
 	gettimeofday(&env->start_time, NULL);
@@ -52,11 +53,12 @@ t_philos	**init_philos(t_env env)
 			free(philos);
 		}
 		philos[i]->index = i;
+		philos[i]->dead_alive = 0;
+		gettimeofday(&philos[i]->last_meal, NULL);
 		philos[i]->meals = 0;
 		philos[i]->left_fork = 0;
 		philos[i]->right_fork = 0;
 		philos[i]->env = env;
 	}
-	// philos[i] = NULL;
 	return (philos);
 }

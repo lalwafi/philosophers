@@ -2,9 +2,10 @@ NAME    = philosophers
 CC      = cc
 CFLAGS  = -Wall -Werror -Wextra -g3 -fsanitize=address
 
-SRCS    = philo.c utils/ft_strdup.c utils/ft_atoi.c utils/ft_isdigit.c \
-			free.c init.c time.c
-
+SRCS    = philo.c utils/ft_strdup.c utils/ft_atoi.c \
+			utils/ft_isdigit.c free.c init.c time.c \
+			fork.c process.c
+		
 OBJ     = $(SRCS:.c=.o)
 
 %.o : %.c
