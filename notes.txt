@@ -31,6 +31,21 @@ steps
 - i think print thinking then restart the loop and look for forks
 - for forks keep them in a loop of checking if both forks are available, if not sleep(100) and look again??
 - ADD ALIVE OR DEAD VARIABLE IN PHILOS!!
+- STOP EATING WHEN MEALS FULL!!!!!!!!!!!!!!
+
 
 questions
 - when does it end? when everyones had the meals they need? when dead also ofcourse
+- if someone dies mid sleep stop everything
+- death timestamp should be the same as ttd (like for ./philosophers 5 200 800 200)
+
+
+usage : ./philosophers [number_of_philosophers] 
+						[time_to_die] 
+						[time_to_eat] 
+						[time_to_sleep] 
+						(optional)[number_of_times_each_philosopher_must_eat]
+
+./philo "5 800 200 200"
+./philo "5 800" "200 200"
+./philo 5 8a 200 200

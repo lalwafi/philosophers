@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:52:59 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/07 18:30:54 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/07 20:17:39 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	whats_the_time(struct timeval start_time)
 		(temp.tv_sec - start_time.tv_sec)*1000));
 }
 
-void	sleep_ms(long int sleep_ms)
+void	sleep_ms(long int sleep_ms, t_philos *philos)
 {
 	struct timeval	temp;
 	struct timeval	start;
@@ -29,7 +29,7 @@ void	sleep_ms(long int sleep_ms)
 	gettimeofday(&temp, NULL);
 	gettimeofday(&start, NULL);
 	while (((temp.tv_usec - start.tv_usec)/1000 + \
-		(temp.tv_sec - start.tv_sec)*1000) < sleep_ms)
+		(temp.tv_sec - start.tv_sec)*1000) < sleep_ms && check_dead(philos) == 0)
 	{
 		usleep(100);
 		gettimeofday(&temp, NULL);

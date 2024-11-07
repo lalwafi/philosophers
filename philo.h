@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/07 18:16:45 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/07 20:16:35 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct philos
 	pthread_mutex_t	fork_lock;
 	pthread_mutex_t	print_lock;
 	pthread_mutex_t	check_lock;
-	t_env		env;	
+	t_env			*env;	
 } t_philos;
 
 
@@ -58,12 +58,13 @@ void		one_philo(char **av);
 void		init_env(t_env *env, char **av, int ac);
 t_philos	**init_philos(t_env env);
 void		create_them_threads(t_philos **philos, int nop);
-void		*run_em(void *idk);
+// void		*run_em(void *idk);
 void		*process(void *ptr);
 
 // process
 
 void		take_forks(t_philos **philos);
+void		drop_forks(t_philos **philo);
 void		eat(t_philos **philo);
 
 // utils
@@ -77,7 +78,7 @@ int			ft_atoi(const char *str);
 
 void		free_all(t_philos **philos, t_env env);
 size_t		whats_the_time(struct timeval start_time);
-void		sleep_ms(long int sleep_ms);
+void		sleep_ms(long int sleep_ms, t_philos *philos);
 void		print_smth(t_philos *philo, char c);
 int			check_dead(t_philos *philo);
 

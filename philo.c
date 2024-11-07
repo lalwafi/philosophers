@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:35:35 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/07 18:00:45 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/07 21:18:49 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	check_args(char **av, int ac)
 	{
 		if (ft_atoi(av[i]) <= 0)
 		{
-			printf("should be positive integers\n");
+			printf("should be positive integers above 0\n");
 			exit(EXIT_FAILURE);
 		}
 		while (av[i][++j])
@@ -73,11 +73,18 @@ void	create_them_threads(t_philos **philos, int nop)
 void	one_philo(char **av)
 {
 	struct timeval	start;
+	struct timeval	temp;
 
 	gettimeofday(&start, NULL);
-	printf("%ld 1 has taken a fork\n", whats_the_time(start));
-	sleep_ms(ft_atoi(av[2]));
-	printf("%ld 1 died\n", whats_the_time(start));
+	gettimeofday(&temp, NULL);
+	printf("\e[33m%ld 1 has taken a fork\e[0m\n", whats_the_time(start));
+	while (((temp.tv_usec - start.tv_usec)/1000 + \
+		(temp.tv_sec - start.tv_sec)*1000) < ft_atoi(av[2]))
+	{
+		usleep(100);
+		gettimeofday(&temp, NULL);
+	}
+	printf("\e[31m%ld 1 died\e[0m\n", whats_the_time(start));
 	exit(EXIT_SUCCESS);
 }
 
@@ -97,7 +104,7 @@ int	main(int ac, char **av)
 		(free(env.forks), exit(EXIT_FAILURE));
 	create_them_threads(philos, env.nop);
 	// whats_the_time(&env);
-	printf("%d, %d, %d, %d, %d\n", env.nop, env.ttd, env.tte, env.tts, env.meal_count);
+	// printf("%d, %d, %d, %d, %d\n", env.nop, env.ttd, env.tte, env.tts, env.meal_count);
 	free_all(philos, env);
 }
 
