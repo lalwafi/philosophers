@@ -54,3 +54,5 @@ before submitting
 - remove fsanitize
 - check norm 
 - check ./philo 4 310 200 100
+- fix having a meal count or not
+- init mutexs

@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:36:21 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/07 21:10:23 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/11 17:50:52 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*process(void *ptr)
 	philo = ptr;
 	if ((philo->index % 2) == 0)
 		sleep_ms(philo->env->tte / 2, philo);
-	while (check_dead(philo) == 0 && philo->env->dead == 0 && philo->meals < philo->env->meal_count)
+	while (check_dead(philo) == 0 && philo->meals < philo->env->meal_count)
 	{
 		while (philo->left_fork == 0 && philo->right_fork == 0 && \
 			philo->env->dead == 0 && check_dead(philo) == 0)
@@ -59,14 +59,14 @@ void	eat(t_philos **philo)
 int	check_dead(t_philos *philo)
 {
 	pthread_mutex_lock(&philo->env->lock);
-	pthread_mutex_lock(&philo->check_lock);
-	pthread_mutex_lock(&philo->print_lock);
+	pthread_mutex_lock(&philo->env->check_lock);
+	pthread_mutex_lock(&philo->env->print_lock);
 	if (philo->env->dead == 1)
 	{
 		philo->env->dead = 1;
 		pthread_mutex_unlock(&philo->env->lock);
-		pthread_mutex_unlock(&philo->print_lock);
-		pthread_mutex_unlock(&philo->check_lock);
+		pthread_mutex_unlock(&philo->env->print_lock);
+		pthread_mutex_unlock(&philo->env->check_lock);
 		return (1);
 	}
 	else if (whats_the_time(philo->last_meal) \
@@ -76,20 +76,19 @@ int	check_dead(t_philos *philo)
 		philo->env->dead = 1;
 		print_smth(philo, 'd');
 		pthread_mutex_unlock(&philo->env->lock);
-		pthread_mutex_unlock(&philo->check_lock);
-		pthread_mutex_unlock(&philo->print_lock);
+		pthread_mutex_unlock(&philo->env->check_lock);
+		pthread_mutex_unlock(&philo->env->print_lock);
 		return (1);
 	}
-	// printf("check death maybe\n");
-	pthread_mutex_unlock(&philo->print_lock);
+	pthread_mutex_unlock(&philo->env->print_lock);
 	pthread_mutex_unlock(&philo->env->lock);
-	pthread_mutex_unlock(&philo->check_lock);
+	pthread_mutex_unlock(&philo->env->check_lock);
 	return	(0);
 }
 
 void	print_smth(t_philos *philo, char c)
 {
-	pthread_mutex_lock(&philo->print_lock);
+	pthread_mutex_lock(&philo->env->print_lock);
 	if (c == 'f' && philo->env->dead == 0)
 		printf("\e[33m%ld %d has taken a fork\e[0m\n", \
 			whats_the_time(philo->env->start_time), (philo->index + 1));
@@ -105,5 +104,5 @@ void	print_smth(t_philos *philo, char c)
 	else if (c == 'd')
 		printf("\e[31m%ld %d died\e[0m\n", \
 			whats_the_time(philo->env->start_time), (philo->index + 1));
-	pthread_mutex_unlock(&philo->print_lock);
+	pthread_mutex_unlock(&philo->env->print_lock);
 }

@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:53:42 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/07 21:18:03 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/11 17:56:29 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,18 @@ void	init_env(t_env *env, char **av, int ac)
 	env->dead = 0;
 	if (pthread_mutex_init(&env->lock, NULL))
 		exit(EXIT_FAILURE);
+	printf("heyooo\n");
+	if (pthread_mutex_init(&env->fork_lock, NULL))
+		(free_all(NULL, (*env)),printf("mutex error\n"), exit(EXIT_FAILURE));
+	if (pthread_mutex_init(&env->print_lock, NULL))
+		(free_all(NULL, (*env)),printf("mutex error\n"), exit(EXIT_FAILURE));
+	if (pthread_mutex_init(&env->check_lock, NULL))
+		(free_all(NULL, (*env)),printf("mutex error\n"), exit(EXIT_FAILURE));
 	gettimeofday(&env->start_time, NULL);
 	if (ac == 6)
 		env->meal_count = ft_atoi(av[5]);
 	else
-		env->meal_count = 2147483647;
+		env->meal_count = 2147483644;
 	env->forks = malloc(sizeof(int) * env->nop);
 	while (++i < env->nop)
 		env->forks[i] = 0;

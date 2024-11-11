@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:08:45 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/03 14:10:18 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/11 17:26:11 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,17 @@ void	free_all(t_philos **philos, t_env env)
 	int	i;
 
 	i = env.nop;
-	while (--i >= 0)
-		free(philos[i]);
-	free(philos);
-	free(env.forks);
+	if (philos)
+	{
+		while (--i >= 0)
+		
+			free(philos[i]);
+		free(philos);
+	}
+	if (env.forks)
+		free(env.forks);
+	pthread_mutex_destroy(&env.lock);
+	pthread_mutex_destroy(&env.fork_lock);
+	pthread_mutex_destroy(&env.print_lock);
+	pthread_mutex_destroy(&env.check_lock);
 }

@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/07 20:16:35 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/11 17:05:30 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ typedef struct env
 	int				*forks;
 	int				dead;
 	pthread_mutex_t	lock;
+	pthread_mutex_t	fork_lock;
+	pthread_mutex_t	print_lock;
+	pthread_mutex_t	check_lock;
 } t_env;
 
 typedef struct philos
@@ -44,9 +47,6 @@ typedef struct philos
 	int				dead_alive;
 	struct timeval	last_meal;
 	pthread_t		thread_id;
-	pthread_mutex_t	fork_lock;
-	pthread_mutex_t	print_lock;
-	pthread_mutex_t	check_lock;
 	t_env			*env;	
 } t_philos;
 

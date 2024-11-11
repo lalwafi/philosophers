@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:35:35 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/07 21:18:49 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/11 17:51:58 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,9 @@ void	create_them_threads(t_philos **philos, int nop)
 	int	i;
 
 	i = -1;
+	printf("heyooo\n");
 	while (++i < nop)
-	{
 		pthread_create(&philos[i]->thread_id, NULL, process, philos[i]);
-	}
 	i = -1;
 	while (++i < nop)
 		pthread_join(philos[i]->thread_id, NULL);
@@ -99,6 +98,7 @@ int	main(int ac, char **av)
 	if (ft_atoi(av[1]) == 1)
 		one_philo(av);
 	init_env(&env, av, ac);
+	printf("heyooo\n");
 	philos = init_philos(env);
 	if (!philos)
 		(free(env.forks), exit(EXIT_FAILURE));
