@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 04:02:27 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/11 17:06:43 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/12 18:22:02 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	take_forks(t_philos **philo)
 {
+	printf("take forks maybe\n");
 	if ((*philo)->index != 0)
 	{
 		if ((*philo)->env->forks[(*philo)->index] == 0 && (*philo)->env->forks[(*philo)->index - 1] == 0)
@@ -46,6 +47,7 @@ void	take_forks(t_philos **philo)
 
 void	drop_forks(t_philos **philo)
 {
+	printf("drop forks maybe\n");
 	if ((*philo)->index != 0)
 	{
 		if ((*philo)->env->forks[(*philo)->index] == 1 && \

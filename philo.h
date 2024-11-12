@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/11 17:05:30 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/12 18:04:03 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ size_t		whats_the_time(struct timeval start_time);
 void		sleep_ms(long int sleep_ms, t_philos *philos);
 void		print_smth(t_philos *philo, char c);
 int			check_dead(t_philos *philo);
+int			meals_check(t_philos *philo);
 
 #endif
