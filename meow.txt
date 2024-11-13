@@ -1,0 +1,992 @@
+0 2 has taken a fork
+0 2 has taken a fork
+0 2 is eating
+0 4 has taken a fork
+0 4 has taken a fork
+0 4 is eating
+2 droppped forks -----
+200 2 is sleeping
+200 1 has taken a fork
+200 1 has taken a fork
+200 1 is eating
+4 droppped forks -----
+200 4 is sleeping
+200 3 has taken a fork
+200 3 has taken a fork
+200 3 is eating
+1 droppped forks -----
+400 1 is sleeping
+400 5 has taken a fork
+400 5 has taken a fork
+400 5 is eating
+400 4 is thinking
+400 2 is thinking
+3 droppped forks -----
+400 3 is sleeping
+400 2 has taken a fork
+400 2 has taken a fork
+400 2 is eating
+600 1 is thinking
+5 droppped forks -----
+600 4 has taken a fork
+600 4 has taken a fork
+600 4 is eating
+600 5 is sleeping
+600 3 is thinking
+2 droppped forks -----
+600 2 is sleeping
+600 1 has taken a fork
+600 1 has taken a fork
+600 1 is eating
+800 5 is thinking
+4 droppped forks -----
+800 4 is sleeping
+800 3 has taken a fork
+800 3 has taken a fork
+800 3 is eating
+801 2 is thinking
+1 droppped forks -----
+801 1 is sleeping
+801 5 has taken a fork
+801 5 has taken a fork
+801 5 is eating
+3 droppped forks -----
+1000 2 has taken a fork
+1000 2 has taken a fork
+1000 2 is eating
+1000 3 is sleeping
+1000 4 is thinking
+5 droppped forks -----
+1000 1 is thinking
+1000 4 has taken a fork
+1000 4 has taken a fork
+1000 4 is eating
+1000 5 is sleeping
+1200 3 is thinking
+2 droppped forks -----
+1200 1 has taken a fork
+1200 1 has taken a fork
+1200 1 is eating
+1200 2 is sleeping
+1200 5 is thinking
+4 droppped forks -----
+1200 4 is sleeping
+1200 3 has taken a fork
+1200 3 has taken a fork
+1200 3 is eating
+1400 2 is thinking
+1 droppped forks -----
+1400 1 is sleeping
+1400 5 has taken a fork
+1400 5 has taken a fork
+1400 5 is eating
+3 droppped forks -----
+1400 2 has taken a fork
+1400 2 has taken a fork
+1400 2 is eating
+1400 3 is sleeping
+1400 4 is thinking
+5 droppped forks -----
+1600 5 is sleeping
+1600 4 has taken a fork
+1600 4 has taken a fork
+1600 4 is eating
+1600 1 is thinking
+2 droppped forks -----
+1600 1 has taken a fork
+1600 1 has taken a fork
+1600 1 is eating
+1600 2 is sleeping
+1600 3 is thinking
+1800 5 is thinking
+4 droppped forks -----
+1800 4 is sleeping
+1800 3 has taken a fork
+1800 3 has taken a fork
+1800 3 is eating
+1800 2 is thinking
+1 droppped forks -----
+1800 1 is sleeping
+1800 5 has taken a fork
+1800 5 has taken a fork
+1800 5 is eating
+3 droppped forks -----
+2000 2 has taken a fork
+2000 2 has taken a fork
+2000 2 is eating
+2000 3 is sleeping
+2000 4 is thinking
+5 droppped forks -----
+2000 4 has taken a fork
+2000 4 has taken a fork
+2000 4 is eating
+2000 5 is sleeping
+2000 1 is thinking
+2 droppped forks -----
+2199 1 has taken a fork
+2199 1 has taken a fork
+2199 1 is eating
+2199 2 is sleeping
+2199 3 is thinking
+4 droppped forks -----
+2199 4 is sleeping
+2199 3 has taken a fork
+2199 3 has taken a fork
+2199 3 is eating
+2199 5 is thinking
+1 droppped forks -----
+2399 2 is thinking
+2399 1 is sleeping
+2399 5 has taken a fork
+2399 5 has taken a fork
+2399 5 is eating
+2399 4 is thinking
+3 droppped forks -----
+2400 2 has taken a fork
+2400 2 has taken a fork
+2400 2 is eating
+2400 3 is sleeping
+2599 1 is thinking
+5 droppped forks -----
+2599 5 is sleeping
+2599 4 has taken a fork
+2599 4 has taken a fork
+2599 4 is eating
+2 droppped forks -----
+2600 2 is sleeping
+2600 1 has taken a fork
+2600 1 has taken a fork
+2600 1 is eating
+2600 3 is thinking
+4 droppped forks -----
+2799 4 is sleeping
+2799 3 has taken a fork
+2799 3 has taken a fork
+2799 3 is eating
+2799 5 is thinking
+2800 2 is thinking
+1 droppped forks -----
+2800 1 is sleeping
+2800 5 has taken a fork
+2800 5 has taken a fork
+2800 5 is eating
+3 droppped forks -----
+2999 3 is sleeping
+2999 2 has taken a fork
+2999 2 has taken a fork
+2999 2 is eating
+2999 4 is thinking
+3000 1 is thinking
+5 droppped forks -----
+3000 4 has taken a fork
+3000 4 has taken a fork
+3000 4 is eating
+3000 5 is sleeping
+3198 3 is thinking
+2 droppped forks -----
+3198 2 is sleeping
+3198 1 has taken a fork
+3198 1 has taken a fork
+3198 1 is eating
+3199 5 is thinking
+4 droppped forks -----
+3199 4 is sleeping
+3199 3 has taken a fork
+3199 3 has taken a fork
+3199 3 is eating
+3398 2 is thinking
+1 droppped forks -----
+3399 1 is sleeping
+3399 5 has taken a fork
+3399 5 has taken a fork
+3399 5 is eating
+3399 4 is thinking
+3 droppped forks -----
+3399 3 is sleeping
+3399 2 has taken a fork
+3399 2 has taken a fork
+3399 2 is eating
+5 droppped forks -----
+3599 5 is sleeping
+3599 4 has taken a fork
+3599 4 has taken a fork
+3599 4 is eating
+3599 1 is thinking
+2 droppped forks -----
+3599 2 is sleeping
+3599 1 has taken a fork
+3599 1 has taken a fork
+3599 1 is eating
+3599 3 is thinking
+4 droppped forks -----
+3799 4 is sleeping
+3799 3 has taken a fork
+3799 3 has taken a fork
+3799 3 is eating
+3799 5 is thinking
+3799 2 is thinking
+1 droppped forks -----
+3799 5 has taken a fork
+3799 5 has taken a fork
+3799 5 is eating
+3799 1 is sleeping
+3 droppped forks -----
+3999 3 is sleeping
+3999 2 has taken a fork
+3999 2 has taken a fork
+3999 2 is eating
+3999 4 is thinking
+5 droppped forks -----
+3999 5 is sleeping
+3999 4 has taken a fork
+3999 4 has taken a fork
+3999 4 is eating
+3999 1 is thinking
+4198 3 is thinking
+2 droppped forks -----
+4198 1 has taken a fork
+4198 1 has taken a fork
+4198 1 is eating
+4198 2 is sleeping
+4 droppped forks -----
+4198 4 is sleeping
+4198 5 is thinking
+4198 3 has taken a fork
+4198 3 has taken a fork
+4198 3 is eating
+1 droppped forks -----
+4398 1 is sleeping
+4398 5 has taken a fork
+4398 5 has taken a fork
+4398 5 is eating
+4398 2 is thinking
+4398 4 is thinking
+3 droppped forks -----
+4398 2 has taken a fork
+4398 2 has taken a fork
+4398 2 is eating
+4398 3 is sleeping
+4598 1 is thinking
+5 droppped forks -----
+4598 4 has taken a fork
+4598 4 has taken a fork
+4598 4 is eating
+4598 5 is sleeping
+4598 3 is thinking
+2 droppped forks -----
+4599 1 has taken a fork
+4599 1 has taken a fork
+4599 1 is eating
+4599 2 is sleeping
+4798 5 is thinking
+4 droppped forks -----
+4798 3 has taken a fork
+4798 3 has taken a fork
+4798 3 is eating
+4798 4 is sleeping
+1 droppped forks -----
+4799 5 has taken a fork
+4799 5 has taken a fork
+4799 5 is eating
+4799 1 is sleeping
+4799 2 is thinking
+3 droppped forks -----
+4998 2 has taken a fork
+4998 2 has taken a fork
+4998 2 is eating
+4998 3 is sleeping
+4998 4 is thinking
+5 droppped forks -----
+4999 4 has taken a fork
+4999 4 has taken a fork
+4999 4 is eating
+4999 5 is sleeping
+4999 1 is thinking
+5197 3 is thinking
+2 droppped forks -----
+5197 2 is sleeping
+5197 1 has taken a fork
+5197 1 has taken a fork
+5197 1 is eating
+4 droppped forks -----
+5198 4 is sleeping
+5198 3 has taken a fork
+5198 3 has taken a fork
+5198 3 is eating
+5198 5 is thinking
+1 droppped forks -----
+5397 5 has taken a fork
+5398 2 is thinking
+5398 5 has taken a fork
+5398 5 is eating
+5398 1 is sleeping
+3 droppped forks -----
+5398 2 has taken a fork
+5398 2 has taken a fork
+5398 2 is eating
+5398 3 is sleeping
+5398 4 is thinking
+5 droppped forks -----
+5598 4 has taken a fork
+5598 4 has taken a fork
+5598 4 is eating
+5598 5 is sleeping
+5598 1 is thinking
+2 droppped forks -----
+5598 2 is sleeping
+5598 1 has taken a fork
+5598 1 has taken a fork
+5598 1 is eating
+5598 3 is thinking
+5798 5 is thinking
+4 droppped forks -----
+5798 4 is sleeping
+5798 3 has taken a fork
+5798 3 has taken a fork
+5798 3 is eating
+5798 2 is thinking
+1 droppped forks -----
+5798 1 is sleeping
+5798 5 has taken a fork
+5798 5 has taken a fork
+5798 5 is eating
+3 droppped forks -----
+5998 3 is sleeping
+5998 2 has taken a fork
+5998 2 has taken a fork
+5998 2 is eating
+5998 4 is thinking
+5 droppped forks -----
+5998 5 is sleeping
+5998 4 has taken a fork
+5998 4 has taken a fork
+5998 4 is eating
+5998 1 is thinking
+2 droppped forks -----
+6197 2 is sleeping
+6197 1 has taken a fork
+6197 1 has taken a fork
+6197 1 is eating
+6197 3 is thinking
+4 droppped forks -----
+6197 3 has taken a fork
+6197 3 has taken a fork
+6197 3 is eating
+6197 4 is sleeping
+6197 5 is thinking
+6397 2 is thinking
+1 droppped forks -----
+6397 1 is sleeping
+6397 5 has taken a fork
+6397 5 has taken a fork
+6397 5 is eating
+3 droppped forks -----
+6397 3 is sleeping
+6397 2 has taken a fork
+6397 2 has taken a fork
+6397 2 is eating
+6398 4 is thinking
+6597 1 is thinking
+5 droppped forks -----
+6597 5 is sleeping
+6597 4 has taken a fork
+6597 4 has taken a fork
+6597 4 is eating
+6598 3 is thinking
+2 droppped forks -----
+6598 2 is sleeping
+6598 1 has taken a fork
+6598 1 has taken a fork
+6598 1 is eating
+6797 5 is thinking
+4 droppped forks -----
+6797 3 has taken a fork
+6797 3 has taken a fork
+6797 3 is eating
+6797 4 is sleeping
+6798 2 is thinking
+1 droppped forks -----
+6798 1 is sleeping
+6798 5 has taken a fork
+6798 5 has taken a fork
+6798 5 is eating
+6997 4 is thinking
+3 droppped forks -----
+6997 3 is sleeping
+6997 2 has taken a fork
+6997 2 has taken a fork
+6997 2 is eating
+6998 1 is thinking
+5 droppped forks -----
+6998 5 is sleeping
+6998 4 has taken a fork
+6998 4 has taken a fork
+6998 4 is eating
+2 droppped forks -----
+7197 1 has taken a fork
+7197 1 has taken a fork
+7197 1 is eating
+7197 2 is sleeping
+7197 3 is thinking
+7197 5 is thinking
+4 droppped forks -----
+7197 4 is sleeping
+7197 3 has taken a fork
+7197 3 has taken a fork
+7197 3 is eating
+3 droppped forks -----
+7397 3 is sleeping
+7397 4 is thinking
+1 droppped forks -----
+7397 5 has taken a fork
+7397 5 has taken a fork
+7397 5 is eating
+7397 1 is sleeping
+7397 2 is thinking
+7397 2 has taken a fork
+7397 2 has taken a fork
+7397 2 is eating
+5 droppped forks -----
+7597 5 is sleeping
+7597 4 has taken a fork
+7597 4 has taken a fork
+7597 4 is eating
+7597 3 is thinking
+7597 1 is thinking
+2 droppped forks -----
+7597 2 is sleeping
+7598 1 has taken a fork
+7598 1 has taken a fork
+7598 1 is eating
+4 droppped forks -----
+7797 3 has taken a fork
+7797 3 has taken a fork
+7797 3 is eating
+7797 4 is sleeping
+7797 5 is thinking
+1 droppped forks -----
+7798 1 is sleeping
+7798 5 has taken a fork
+7798 5 has taken a fork
+7798 5 is eating
+7798 2 is thinking
+3 droppped forks -----
+7997 3 is sleeping
+7997 2 has taken a fork
+7997 2 has taken a fork
+7997 2 is eating
+7997 4 is thinking
+7998 1 is thinking
+5 droppped forks -----
+7998 5 is sleeping
+7998 4 has taken a fork
+7998 4 has taken a fork
+7998 4 is eating
+2 droppped forks -----
+8196 1 has taken a fork
+8196 1 has taken a fork
+8196 1 is eating
+8196 2 is sleeping
+8197 3 is thinking
+8197 5 is thinking
+4 droppped forks -----
+8197 4 is sleeping
+8197 3 has taken a fork
+8197 3 has taken a fork
+8197 3 is eating
+8397 2 is thinking
+1 droppped forks -----
+8397 1 is sleeping
+8397 5 has taken a fork
+8397 5 has taken a fork
+8397 5 is eating
+8397 4 is thinking
+3 droppped forks -----
+8397 3 is sleeping
+8397 2 has taken a fork
+8397 2 has taken a fork
+8397 2 is eating
+8597 1 is thinking
+5 droppped forks -----
+8597 5 is sleeping
+8597 4 has taken a fork
+8597 4 has taken a fork
+8597 4 is eating
+8597 3 is thinking
+2 droppped forks -----
+8597 2 is sleeping
+8597 1 has taken a fork
+8597 1 has taken a fork
+8597 1 is eating
+4 droppped forks -----
+8797 4 is sleeping
+8797 3 has taken a fork
+8797 3 has taken a fork
+8797 3 is eating
+8797 5 is thinking
+1 droppped forks -----
+8798 1 is sleeping
+8798 5 has taken a fork
+8798 5 has taken a fork
+8798 5 is eating
+8798 2 is thinking
+8997 4 is thinking
+3 droppped forks -----
+8997 3 is sleeping
+8997 2 has taken a fork
+8997 2 has taken a fork
+8997 2 is eating
+5 droppped forks -----
+8998 5 is sleeping
+8998 4 has taken a fork
+8998 4 has taken a fork
+8998 4 is eating
+8998 1 is thinking
+2 droppped forks -----
+9196 2 is sleeping
+9196 1 has taken a fork
+9196 1 has taken a fork
+9196 1 is eating
+9197 3 is thinking
+9197 5 is thinking
+4 droppped forks -----
+9197 4 is sleeping
+9197 3 has taken a fork
+9197 3 has taken a fork
+9197 3 is eating
+1 droppped forks -----
+9397 5 has taken a fork
+9397 4 is thinking
+9397 5 has taken a fork
+9397 5 is eating
+9397 1 is sleeping
+9397 2 is thinking
+3 droppped forks -----
+9397 3 is sleeping
+9397 2 has taken a fork
+9397 2 has taken a fork
+9397 2 is eating
+9597 1 is thinking
+5 droppped forks -----
+9597 4 has taken a fork
+9597 4 has taken a fork
+9597 4 is eating
+9597 5 is sleeping
+9597 3 is thinking
+2 droppped forks -----
+9597 2 is sleeping
+9598 1 has taken a fork
+9598 1 has taken a fork
+9598 1 is eating
+4 droppped forks -----
+9797 3 has taken a fork
+9797 3 has taken a fork
+9797 3 is eating
+9797 4 is sleeping
+9797 5 is thinking
+1 droppped forks -----
+9798 1 is sleeping
+9798 5 has taken a fork
+9798 5 has taken a fork
+9798 5 is eating
+9798 2 is thinking
+9997 4 is thinking
+3 droppped forks -----
+9997 3 is sleeping
+9997 2 has taken a fork
+9997 2 has taken a fork
+9997 2 is eating
+9998 1 is thinking
+5 droppped forks -----
+9998 4 has taken a fork
+9998 4 has taken a fork
+9998 4 is eating
+9998 5 is sleeping
+2 droppped forks -----
+10197 2 is sleeping
+10197 1 has taken a fork
+10197 1 has taken a fork
+10197 1 is eating
+10197 3 is thinking
+4 droppped forks -----
+10197 4 is sleeping
+10197 5 is thinking
+10197 3 has taken a fork
+10197 3 has taken a fork
+10197 3 is eating
+3 droppped forks -----
+10397 3 is sleeping
+1 droppped forks -----
+10397 1 is sleeping
+10397 5 has taken a fork
+10397 5 has taken a fork
+10397 5 is eating
+10397 4 is thinking
+10397 2 is thinking
+10397 2 has taken a fork
+10397 2 has taken a fork
+10397 2 is eating
+10597 3 is thinking
+10597 1 is thinking
+5 droppped forks -----
+10597 4 has taken a fork
+10597 4 has taken a fork
+10597 4 is eating
+10597 5 is sleeping
+2 droppped forks -----
+10597 2 is sleeping
+10597 1 has taken a fork
+10597 1 has taken a fork
+10597 1 is eating
+4 droppped forks -----
+10797 3 has taken a fork
+10797 3 has taken a fork
+10797 3 is eating
+10797 4 is sleeping
+10797 5 is thinking
+1 droppped forks -----
+10798 5 has taken a fork
+10798 5 has taken a fork
+10798 5 is eating
+10798 1 is sleeping
+10798 2 is thinking
+10997 4 is thinking
+3 droppped forks -----
+10997 2 has taken a fork
+10997 2 has taken a fork
+10997 2 is eating
+10997 3 is sleeping
+5 droppped forks -----
+10998 4 has taken a fork
+10998 4 has taken a fork
+10998 4 is eating
+10998 5 is sleeping
+10998 1 is thinking
+11196 3 is thinking
+2 droppped forks -----
+11196 1 has taken a fork
+11196 1 has taken a fork
+11196 1 is eating
+11196 2 is sleeping
+4 droppped forks -----
+11197 4 is sleeping
+11197 3 has taken a fork
+11197 3 has taken a fork
+11197 3 is eating
+11197 5 is thinking
+11397 2 is thinking
+1 droppped forks -----
+11397 1 is sleeping
+11397 5 has taken a fork
+11397 5 has taken a fork
+11397 5 is eating
+11397 4 is thinking
+3 droppped forks -----
+11397 3 is sleeping
+11397 2 has taken a fork
+11397 2 has taken a fork
+11397 2 is eating
+11597 1 is thinking
+11597 3 is thinking
+5 droppped forks -----
+11597 5 is sleeping
+11597 4 has taken a fork
+11597 4 has taken a fork
+11597 4 is eating
+2 droppped forks -----
+11597 2 is sleeping
+11597 1 has taken a fork
+11597 1 has taken a fork
+11597 1 is eating
+4 droppped forks -----
+11797 3 has taken a fork
+11797 3 has taken a fork
+11797 3 is eating
+11797 4 is sleeping
+11797 2 is thinking
+11797 5 is thinking
+1 droppped forks -----
+11798 1 is sleeping
+11798 5 has taken a fork
+11798 5 has taken a fork
+11798 5 is eating
+3 droppped forks -----
+11997 2 has taken a fork
+11997 2 has taken a fork
+11997 2 is eating
+11997 3 is sleeping
+11997 4 is thinking
+11998 1 is thinking
+5 droppped forks -----
+11998 4 has taken a fork
+11998 4 has taken a fork
+11998 4 is eating
+11998 5 is sleeping
+2 droppped forks -----
+12196 1 has taken a fork
+12196 1 has taken a fork
+12196 1 is eating
+12196 2 is sleeping
+12196 3 is thinking
+12197 5 is thinking
+4 droppped forks -----
+12197 3 has taken a fork
+12197 3 has taken a fork
+12197 3 is eating
+12197 4 is sleeping
+3 droppped forks -----
+12397 3 is sleeping
+1 droppped forks -----
+12397 1 is sleeping
+12397 5 has taken a fork
+12397 5 has taken a fork
+12397 5 is eating
+12397 4 is thinking
+12397 2 is thinking
+12397 2 has taken a fork
+12397 2 has taken a fork
+12397 2 is eating
+12597 1 is thinking
+12597 3 is thinking
+5 droppped forks -----
+12597 5 is sleeping
+12597 4 has taken a fork
+12597 4 has taken a fork
+12597 4 is eating
+2 droppped forks -----
+12597 2 is sleeping
+12597 1 has taken a fork
+12597 1 has taken a fork
+12597 1 is eating
+12797 5 is thinking
+4 droppped forks -----
+12797 4 is sleeping
+12797 3 has taken a fork
+12797 3 has taken a fork
+12797 3 is eating
+1 droppped forks -----
+12798 1 is sleeping
+12798 5 has taken a fork
+12798 5 has taken a fork
+12798 5 is eating
+12798 2 is thinking
+3 droppped forks -----
+12997 3 is sleeping
+12997 2 has taken a fork
+12997 2 has taken a fork
+12997 2 is eating
+12997 4 is thinking
+5 droppped forks -----
+12998 5 is sleeping
+12998 4 has taken a fork
+12998 4 has taken a fork
+12998 4 is eating
+12998 1 is thinking
+2 droppped forks -----
+13196 1 has taken a fork
+13196 1 has taken a fork
+13196 1 is eating
+13196 2 is sleeping
+13197 3 is thinking
+4 droppped forks -----
+13197 4 is sleeping
+13197 3 has taken a fork
+13197 3 has taken a fork
+13197 3 is eating
+13197 5 is thinking
+13397 4 is thinking
+13397 2 is thinking
+3 droppped forks -----
+13397 3 is sleeping
+1 droppped forks -----
+13397 1 is sleeping
+13397 5 has taken a fork
+13397 5 has taken a fork
+13397 5 is eating
+13397 2 has taken a fork
+13397 2 has taken a fork
+13397 2 is eating
+13597 3 is thinking
+13597 1 is thinking
+5 droppped forks -----
+13597 4 has taken a fork
+13597 4 has taken a fork
+13597 4 is eating
+13597 5 is sleeping
+2 droppped forks -----
+13597 2 is sleeping
+13597 1 has taken a fork
+13597 1 has taken a fork
+13597 1 is eating
+4 droppped forks -----
+13797 3 has taken a fork
+13797 3 has taken a fork
+13797 3 is eating
+13797 4 is sleeping
+13797 5 is thinking
+13797 2 is thinking
+1 droppped forks -----
+13798 1 is sleeping
+13798 5 has taken a fork
+13798 5 has taken a fork
+13798 5 is eating
+13997 4 is thinking
+3 droppped forks -----
+13998 3 is sleeping
+13998 2 has taken a fork
+13998 2 has taken a fork
+13998 2 is eating
+5 droppped forks -----
+13998 5 is sleeping
+13998 4 has taken a fork
+13998 4 has taken a fork
+13998 4 is eating
+13998 1 is thinking
+14197 3 is thinking
+2 droppped forks -----
+14197 1 has taken a fork
+14197 1 has taken a fork
+14197 1 is eating
+14197 2 is sleeping
+14197 5 is thinking
+4 droppped forks -----
+14197 4 is sleeping
+14197 3 has taken a fork
+14197 3 has taken a fork
+14197 3 is eating
+14397 2 is thinking
+3 droppped forks -----
+14397 3 is sleeping
+14397 4 is thinking
+1 droppped forks -----
+14397 5 has taken a fork
+14397 5 has taken a fork
+14397 5 is eating
+14397 1 is sleeping
+14397 2 has taken a fork
+14397 2 has taken a fork
+14397 2 is eating
+5 droppped forks -----
+14597 4 has taken a fork
+14597 4 has taken a fork
+14597 4 is eating
+14597 5 is sleeping
+14597 3 is thinking
+14597 1 is thinking
+2 droppped forks -----
+14597 2 is sleeping
+14597 1 has taken a fork
+14597 1 has taken a fork
+14597 1 is eating
+14797 5 is thinking
+4 droppped forks -----
+14797 4 is sleeping
+14797 3 has taken a fork
+14797 3 has taken a fork
+14797 3 is eating
+14797 2 is thinking
+1 droppped forks -----
+14798 1 is sleeping
+14798 5 has taken a fork
+14798 5 has taken a fork
+14798 5 is eating
+3 droppped forks -----
+14997 3 is sleeping
+14997 2 has taken a fork
+14997 2 has taken a fork
+14997 2 is eating
+14997 4 is thinking
+14998 1 is thinking
+5 droppped forks -----
+14998 5 is sleeping
+14998 4 has taken a fork
+14998 4 has taken a fork
+14998 4 is eating
+2 droppped forks -----
+15197 1 has taken a fork
+15197 1 has taken a fork
+15197 1 is eating
+15197 2 is sleeping
+15197 3 is thinking
+4 droppped forks -----
+15197 4 is sleeping
+15197 3 has taken a fork
+15197 3 has taken a fork
+15197 3 is eating
+15197 5 is thinking
+15397 2 is thinking
+1 droppped forks -----
+15397 1 is sleeping
+15397 5 has taken a fork
+15397 5 has taken a fork
+15397 5 is eating
+15397 4 is thinking
+3 droppped forks -----
+15397 3 is sleeping
+15397 2 has taken a fork
+15397 2 has taken a fork
+15397 2 is eating
+15597 1 is thinking
+5 droppped forks -----
+15597 5 is sleeping
+15597 4 has taken a fork
+15597 4 has taken a fork
+15597 4 is eating
+15597 3 is thinking
+2 droppped forks -----
+15597 2 is sleeping
+15597 1 has taken a fork
+15597 1 has taken a fork
+15597 1 is eating
+4 droppped forks -----
+15797 4 is sleeping
+15797 3 has taken a fork
+15797 3 has taken a fork
+15797 3 is eating
+15797 2 is thinking
+15797 5 is thinking
+1 droppped forks -----
+15797 1 is sleeping
+15797 5 has taken a fork
+15797 5 has taken a fork
+15797 5 is eating
+15997 4 is thinking
+3 droppped forks -----
+15997 3 is sleeping
+15997 2 has taken a fork
+15997 2 has taken a fork
+15997 2 is eating
+15998 1 is thinking
+5 droppped forks -----
+15998 5 is sleeping
+15998 4 has taken a fork
+15998 4 has taken a fork
+15998 4 is eating
+16196 3 is thinking
+2 droppped forks -----
+16196 2 is sleeping
+16196 1 has taken a fork
+16196 1 has taken a fork
+16196 1 is eating
+4 droppped forks -----
+16197 4 is sleeping
+16197 3 has taken a fork
+16197 3 has taken a fork
+16197 3 is eating
+16197 5 is thinking
+16397 4 is thinking
+1 droppped forks -----
+16397 1 is sleeping
+16397 5 has taken a fork
+16397 5 has taken a fork
+16397 5 is eating
+3 droppped forks -----
+16397 3 is sleeping
+16397 2 is thinking
+16397 2 has taken a fork
+16397 2 has taken a fork
+16397 2 is eating
+2 droppped forks -----
+17157 2 is sleeping
+17157 4 died
+5 droppped forks -----
