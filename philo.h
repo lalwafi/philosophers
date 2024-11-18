@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/12 18:04:03 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/18 16:28:49 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct philos
 void		check_args(char **av, int ac);
 void		one_philo(char **av);
 void		init_env(t_env *env, char **av, int ac);
-t_philos	**init_philos(t_env env);
+t_philos	**init_philos(t_env *env);
 void		create_them_threads(t_philos **philos, int nop);
 // void		*run_em(void *idk);
 void		*process(void *ptr);

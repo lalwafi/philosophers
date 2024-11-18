@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:35:35 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/12 17:55:38 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/18 16:28:40 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	main(int ac, char **av)
 	if (ft_atoi(av[1]) == 1)
 		one_philo(av);
 	init_env(&env, av, ac);
-	philos = init_philos(env);
+	philos = init_philos(&env);
 	if (!philos)
 		(free(env.forks), exit(EXIT_FAILURE));
 	create_them_threads(philos, env.nop);

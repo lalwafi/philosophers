@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:53:42 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/12 18:03:15 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/18 16:28:33 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ void	init_env(t_env *env, char **av, int ac)
 		env->forks[i] = 0;
 }
 
-t_philos	**init_philos(t_env env)
+t_philos	**init_philos(t_env *env)
 {
 	t_philos	**philos;
 	int			i;
 
 	i = -1;
-	philos = malloc(sizeof(t_philos *) * (env.nop));
+	philos = malloc(sizeof(t_philos *) * (env->nop));
 	if (!philos)
 		return (NULL);
-	while (++i < env.nop)
+	while (++i < env->nop)
 	{
 		philos[i] = malloc(sizeof(t_philos));
 		if (!philos[i])
@@ -64,7 +64,7 @@ t_philos	**init_philos(t_env env)
 		philos[i]->meals = 0;
 		philos[i]->left_fork = 0;
 		philos[i]->right_fork = 0;
-		philos[i]->env = &env;
+		philos[i]->env = env;
 	}
 	return (philos);
 }

@@ -1,6 +1,6 @@
 NAME    = philo
 CC      = cc
-CFLAGS  = -Wall -Werror -Wextra -g3 -fsanitize=address
+CFLAGS  = -Wall -Werror -Wextra -g3 -pthread #-fsanitize=thread
 
 SRCS    = philo.c utils/ft_strdup.c utils/ft_atoi.c \
 			utils/ft_isdigit.c free.c init.c time.c \

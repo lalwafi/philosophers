@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 04:02:27 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/18 15:53:18 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/18 16:11:11 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	take_forks(t_philos **philo)
 {
-	printf("%d is in take forks\n", (*philo)->index + 1);
+	// printf("%d is in take forks\n", (*philo)->index + 1);
 	pthread_mutex_lock(&(*philo)->env->fork_lock);
 	if ((*philo)->index != 0)
 	{
@@ -45,7 +45,7 @@ void	take_forks(t_philos **philo)
 
 void	drop_forks(t_philos **philo)
 {
-	printf("%d is in drop forks\n", (*philo)->index + 1);
+	// printf("%d is in drop forks\n", (*philo)->index + 1);
 	pthread_mutex_lock(&(*philo)->env->fork_lock);
 	if ((*philo)->index != 0)
 	{
