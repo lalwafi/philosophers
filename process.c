@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:36:21 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/12 18:44:27 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/18 15:57:54 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,22 @@ void	*process(void *ptr)
 	t_philos	*philo;
 
 	philo = ptr;
-	printf("before, thread %d\n", philo->index);
 	if ((philo->index % 2) == 0)
 		sleep_ms(philo->env->tte / 2, philo);
-	printf("after, thread %d\n", philo->index);
+	printf("not sleeping =  %d\n", philo->index + 1);
 	while (check_dead(philo) == 0 && meals_check(philo) == 0)
 	{
-		while (philo->left_fork == 0 && philo->right_fork == 0 && \
-			philo->env->dead == 0 && check_dead(philo) == 0)
+		printf("issue in check_dead, thread %d\n", philo->index + 1);
+		while (philo->left_fork == 0 && philo->right_fork == 0 && check_dead(philo) == 0)
 			take_forks(&philo);
-		if (check_dead(philo) == 1 || philo->env->dead == 1)
+		if (check_dead(philo) == 1)
 			break ;
-		printf("issue in check_dead, thread %d\n", philo->index);
 		eat(&philo);
 		if (meals_check(philo) == 1)
 			break ;
 		print_smth(philo, 's');
 		sleep_ms(philo->env->tts, philo);
-		if (check_dead(philo) == 1 || philo->env->dead == 1)
+		if (check_dead(philo) == 1)
 			break ;
 		print_smth(philo, 't');
 		usleep(100);
@@ -55,25 +53,23 @@ void	eat(t_philos **philo)
 
 int	check_dead(t_philos *philo)
 {
-	pthread_mutex_lock(&philo->env->lock);
 	pthread_mutex_lock(&philo->env->check_lock);
 	if (philo->env->dead == 1)
 	{
-		pthread_mutex_unlock(&philo->env->lock);
+		printf("checking dead\n");
 		pthread_mutex_unlock(&philo->env->check_lock);
 		return (1);
 	}
 	else if (whats_the_time(philo->last_meal) \
 		> philo->env->ttd)
 	{
+		printf("checking dead\n");
 		philo->dead_alive = 1;
 		philo->env->dead = 1;
 		print_smth(philo, 'd');
-		pthread_mutex_unlock(&philo->env->lock);
 		pthread_mutex_unlock(&philo->env->check_lock);
 		return (1);
 	}
-	pthread_mutex_unlock(&philo->env->lock);
 	pthread_mutex_unlock(&philo->env->check_lock);
 	return	(0);
 }
@@ -101,6 +97,7 @@ void	print_smth(t_philos *philo, char c)
 
 int	meals_check(t_philos *philo)
 {
+	printf("wtf is happening\n");
 	if (philo->env->meal_count == -1)
 		return (0);
 	else if (philo->meals < philo->env->meal_count)
