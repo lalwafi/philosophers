@@ -56,3 +56,5 @@ before submitting
 - check ./philo 4 310 200 100
 - fix having a meal count or not
 - init mutexs
+- only 5 functions per file
+

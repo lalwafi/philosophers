@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:35:35 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/18 16:28:40 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/19 17:51:02 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,23 +39,6 @@ void	check_args(char **av, int ac)
 	}
 }
 
-// void	*run_em(void *idk)
-// {
-// 	t_philos *philos = idk;
-	
-// 	if (philos->index % 2 == 0)
-// 		sleep_ms(200);
-// 	while (1)
-// 	{
-// 		pthread_mutex_lock(&philos->env.lock);
-// 		printf("%d - %ld\n", philos->index, whats_the_time(philos->env.start_time));
-// 		take_forks(&philos);
-// 		pthread_mutex_unlock(&philos->env.lock);
-// 		sleep_ms(200);
-// 	}
-// 	return (NULL);
-// }
-
 void	create_them_threads(t_philos **philos, int nop)
 {
 	int	i;
@@ -76,8 +59,8 @@ void	one_philo(char **av)
 	gettimeofday(&start, NULL);
 	gettimeofday(&temp, NULL);
 	printf("\e[33m%ld 1 has taken a fork\e[0m\n", whats_the_time(start));
-	while (((temp.tv_usec - start.tv_usec)/1000 + \
-		(temp.tv_sec - start.tv_sec)*1000) < ft_atoi(av[2]))
+	while (((temp.tv_usec - start.tv_usec) / 1000 + \
+		(temp.tv_sec - start.tv_sec) * 1000) < ft_atoi(av[2]))
 	{
 		usleep(100);
 		gettimeofday(&temp, NULL);
@@ -88,7 +71,7 @@ void	one_philo(char **av)
 
 int	main(int ac, char **av)
 {
-	t_env 		env;
+	t_env		env;
 	t_philos	**philos;
 
 	if (ac < 5 || ac > 6)
@@ -101,11 +84,5 @@ int	main(int ac, char **av)
 	if (!philos)
 		(free(env.forks), exit(EXIT_FAILURE));
 	create_them_threads(philos, env.nop);
-	// whats_the_time(&env);
-	// printf("%d, %d, %d, %d, %d\n", env.nop, env.ttd, env.tte, env.tts, env.meal_count);
 	free_all(philos, env);
 }
-
-// number_of_philosophers time_to_die time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]
-
-// parse first, then make the processes, then start eating and all, then free stuff

@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/18 16:28:49 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/19 17:34:27 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 # include <sys/time.h>
 # include <pthread.h>
 
-# define ARGERROR "usage : ./philosophers [number_of_philosophers] [time_to_die] [time_to_eat] [time_to_sleep] (optional)[number_of_times_each_philosopher_must_eat]"
+# define ARGERROR "usage : ./philosophers [number_of_philosophers] \
+				[time_to_die] [time_to_eat] [time_to_sleep] \
+				(optional)[number_of_times_each_philosopher_must_eat]"
 
 typedef struct env
 {
@@ -36,7 +38,7 @@ typedef struct env
 	pthread_mutex_t	fork_lock;
 	pthread_mutex_t	print_lock;
 	pthread_mutex_t	check_lock;
-} t_env;
+}	t_env;
 
 typedef struct philos
 {
@@ -48,8 +50,7 @@ typedef struct philos
 	struct timeval	last_meal;
 	pthread_t		thread_id;
 	t_env			*env;	
-} t_philos;
-
+}	t_philos;
 
 // functions
 

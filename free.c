@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:08:45 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/11 17:26:11 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/19 17:29:09 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	free_all(t_philos **philos, t_env env)
 	if (philos)
 	{
 		while (--i >= 0)
-		
 			free(philos[i]);
 		free(philos);
 	}

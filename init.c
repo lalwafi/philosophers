@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:53:42 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/18 16:28:33 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/19 17:32:41 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void	init_env(t_env *env, char **av, int ac)
 	if (pthread_mutex_init(&env->lock, NULL))
 		exit(EXIT_FAILURE);
 	if (pthread_mutex_init(&env->fork_lock, NULL))
-		(free_all(NULL, (*env)),printf("mutex error\n"), exit(EXIT_FAILURE));
+		(free_all(NULL, (*env)), printf("mutex error\n"), exit(EXIT_FAILURE));
 	if (pthread_mutex_init(&env->print_lock, NULL))
-		(free_all(NULL, (*env)),printf("mutex error\n"), exit(EXIT_FAILURE));
+		(free_all(NULL, (*env)), printf("mutex error\n"), exit(EXIT_FAILURE));
 	if (pthread_mutex_init(&env->check_lock, NULL))
-		(free_all(NULL, (*env)),printf("mutex error\n"), exit(EXIT_FAILURE));
+		(free_all(NULL, (*env)), printf("mutex error\n"), exit(EXIT_FAILURE));
 	gettimeofday(&env->start_time, NULL);
 	if (ac == 6)
 		env->meal_count = ft_atoi(av[5]);
