@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/19 17:34:27 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/20 17:56:52 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,15 @@
 
 typedef struct env
 {
-	int				nop; //number of philosophers
+	int				nop;
 	unsigned long	ttd;
 	unsigned long	tte;
 	unsigned long	tts;
 	struct timeval	start_time;
-	int				meal_count; //how many meals each philosopher should eat
+	int				meal_count;
 	int				*forks;
+	pthread_mutex_t	*fork_locks;
 	int				dead;
-	pthread_mutex_t	lock;
-	pthread_mutex_t	fork_lock;
 	pthread_mutex_t	print_lock;
 	pthread_mutex_t	check_lock;
 }	t_env;
@@ -58,13 +57,14 @@ void		check_args(char **av, int ac);
 void		one_philo(char **av);
 void		init_env(t_env *env, char **av, int ac);
 t_philos	**init_philos(t_env *env);
+void		init_mutex(t_env *env);
 void		create_them_threads(t_philos **philos, int nop);
-// void		*run_em(void *idk);
 void		*process(void *ptr);
 
 // process
 
 void		take_forks(t_philos **philos);
+void		take_not_zero(t_philos **philo);
 void		drop_forks(t_philos **philo);
 void		eat(t_philos **philo);
 

@@ -57,4 +57,7 @@ before submitting
 - fix having a meal count or not
 - init mutexs
 - only 5 functions per file
+- fork mutex for each fork
+- ur not allowed to use exit dumbass
+- ./philo 200 400 200 200
 

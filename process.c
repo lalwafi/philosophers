@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:36:21 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/19 17:51:58 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/20 17:50:27 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*process(void *ptr)
 		if (check_dead(philo) == 1)
 			break ;
 		eat(&philo);
-		if (meals_check(philo) == 1)
+		if (meals_check(philo) == 1 || check_dead(philo) == 1)
 			break ;
 		print_smth(philo, 's');
 		sleep_ms(philo->env->tts, philo);
@@ -74,16 +74,16 @@ int	check_dead(t_philos *philo)
 void	print_smth(t_philos *philo, char c)
 {
 	pthread_mutex_lock(&philo->env->print_lock);
-	if (c == 'f' && philo->env->dead == 0)
+	if (c == 'f')
 		printf("\e[33m%ld %d has taken a fork\e[0m\n", \
 			whats_the_time(philo->env->start_time), (philo->index + 1));
-	else if (c == 'e' && philo->env->dead == 0)
+	else if (c == 'e')
 		printf("\e[32m%ld %d is eating\e[0m\n", \
 			whats_the_time(philo->env->start_time), (philo->index + 1));
-	else if (c == 's' && philo->env->dead == 0)
+	else if (c == 's')
 		printf("\e[36m%ld %d is sleeping\e[0m\n", \
 			whats_the_time(philo->env->start_time), (philo->index + 1));
-	else if (c == 't' && philo->env->dead == 0)
+	else if (c == 't')
 		printf("\e[35m%ld %d is thinking\e[0m\n", \
 			whats_the_time(philo->env->start_time), (philo->index + 1));
 	else if (c == 'd')

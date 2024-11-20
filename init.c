@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:53:42 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/19 17:32:41 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/20 17:58:11 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,35 @@ void	init_env(t_env *env, char **av, int ac)
 	env->tte = ft_atoi(av[3]);
 	env->tts = ft_atoi(av[4]);
 	env->dead = 0;
-	if (pthread_mutex_init(&env->lock, NULL))
-		exit(EXIT_FAILURE);
-	if (pthread_mutex_init(&env->fork_lock, NULL))
-		(free_all(NULL, (*env)), printf("mutex error\n"), exit(EXIT_FAILURE));
-	if (pthread_mutex_init(&env->print_lock, NULL))
-		(free_all(NULL, (*env)), printf("mutex error\n"), exit(EXIT_FAILURE));
-	if (pthread_mutex_init(&env->check_lock, NULL))
-		(free_all(NULL, (*env)), printf("mutex error\n"), exit(EXIT_FAILURE));
+	init_mutex(env);
 	gettimeofday(&env->start_time, NULL);
 	if (ac == 6)
 		env->meal_count = ft_atoi(av[5]);
 	else
 		env->meal_count = -1;
 	env->forks = malloc(sizeof(int) * env->nop);
+	if (!env->forks)
+		exit(EXIT_FAILURE);
 	while (++i < env->nop)
 		env->forks[i] = 0;
+}
+
+void	init_mutex(t_env *env)
+{
+	int	i;
+
+	i = -1;
+	if (pthread_mutex_init(&env->print_lock, NULL))
+		(free_all(NULL, (*env)), printf("mutex error\n"), exit(EXIT_FAILURE));
+	if (pthread_mutex_init(&env->check_lock, NULL))
+		(free_all(NULL, (*env)), printf("mutex error\n"), exit(EXIT_FAILURE));
+	env->fork_locks = malloc(sizeof(pthread_mutex_t) * env->nop);
+	while (++i < env->nop)
+	{
+		if (pthread_mutex_init(&env->fork_locks[i], NULL))
+			(free_all(NULL, (*env)),
+				printf("mutex error\n"), exit(EXIT_FAILURE));
+	}
 }
 
 t_philos	**init_philos(t_env *env)
