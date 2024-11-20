@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:36:21 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/20 17:50:27 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/20 21:28:39 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ int	check_dead(t_philos *philo)
 	{
 		philo->dead_alive = 1;
 		philo->env->dead = 1;
-		print_smth(philo, 'd');
+		pthread_mutex_lock(&philo->env->print_lock);
+		printf("\e[31m%ld %d died\e[0m\n", \
+			whats_the_time(philo->env->start_time), (philo->index + 1));
+		pthread_mutex_unlock(&philo->env->print_lock);
 		pthread_mutex_unlock(&philo->env->check_lock);
 		return (1);
 	}
@@ -73,23 +76,22 @@ int	check_dead(t_philos *philo)
 
 void	print_smth(t_philos *philo, char c)
 {
+	pthread_mutex_lock(&philo->env->check_lock);
 	pthread_mutex_lock(&philo->env->print_lock);
-	if (c == 'f')
+	if (c == 'f' && philo->env->dead == 0)
 		printf("\e[33m%ld %d has taken a fork\e[0m\n", \
 			whats_the_time(philo->env->start_time), (philo->index + 1));
-	else if (c == 'e')
+	else if (c == 'e' && philo->env->dead == 0)
 		printf("\e[32m%ld %d is eating\e[0m\n", \
 			whats_the_time(philo->env->start_time), (philo->index + 1));
-	else if (c == 's')
+	else if (c == 's' && philo->env->dead == 0)
 		printf("\e[36m%ld %d is sleeping\e[0m\n", \
 			whats_the_time(philo->env->start_time), (philo->index + 1));
-	else if (c == 't')
+	else if (c == 't' && philo->env->dead == 0)
 		printf("\e[35m%ld %d is thinking\e[0m\n", \
 			whats_the_time(philo->env->start_time), (philo->index + 1));
-	else if (c == 'd')
-		printf("\e[31m%ld %d died\e[0m\n", \
-			whats_the_time(philo->env->start_time), (philo->index + 1));
 	pthread_mutex_unlock(&philo->env->print_lock);
+	pthread_mutex_unlock(&philo->env->check_lock);
 }
 
 int	meals_check(t_philos *philo)
