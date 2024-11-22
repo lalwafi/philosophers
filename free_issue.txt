@@ -1,0 +1,41 @@
+valgrind --leak-check=full ./philo 200 400 200 200
+
+
+==5184== Memcheck, a memory error detector
+==5184== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==5184== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==5184== Command: ./philo 200 400 200 200
+==5184== 
+91 6 has taken a fork
+128 8 has taken a fork
+227 2 has taken a fork
+268 18 has taken a fork
+268 18 has taken a fork
+296 16 has taken a fork
+325 22 has taken a fork
+325 12 has taken a fork
+325 12 has taken a fork
+325 10 has taken a fork
+325 10 has taken a fork
+393 2 has taken a fork
+422 23 died
+==5184== 
+==5184== HEAP SUMMARY:
+==5184==     in use at exit: 8,000 bytes in 1 blocks
+==5184==   total heap usage: 404 allocs, 403 frees, 77,024 bytes allocated
+==5184== 
+==5184== 8,000 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==5184==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5184==    by 0x109C2D: init_mutex (init.c:47)
+==5184==    by 0x109A36: init_env (init.c:25)
+==5184==    by 0x109660: main (philo.c:82)
+==5184== 
+==5184== LEAK SUMMARY:
+==5184==    definitely lost: 8,000 bytes in 1 blocks
+==5184==    indirectly lost: 0 bytes in 0 blocks
+==5184==      possibly lost: 0 bytes in 0 blocks
+==5184==    still reachable: 0 bytes in 0 blocks
+==5184==         suppressed: 0 bytes in 0 blocks
+==5184== 
+==5184== For lists of detected and suppressed errors, rerun with: -s
+==5184== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
