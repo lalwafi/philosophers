@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/20 17:56:52 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/22 21:39:54 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <string.h>
 # include <sys/time.h>
 # include <pthread.h>
+# include <limits.h>
 
 # define ARGERROR "usage : ./philosophers [number_of_philosophers] \
 				[time_to_die] [time_to_eat] [time_to_sleep] \
@@ -53,11 +54,12 @@ typedef struct philos
 
 // functions
 
-void		check_args(char **av, int ac);
-void		one_philo(char **av);
-void		init_env(t_env *env, char **av, int ac);
+int			check_args(char **av, int ac);
+int			one_philo(char **av);
+int			init_env(t_env *env, char **av, int ac);
+int			is_it_max(t_env *env, char **av, int ac);
 t_philos	**init_philos(t_env *env);
-void		init_mutex(t_env *env);
+int			init_mutex(t_env *env);
 void		create_them_threads(t_philos **philos, int nop);
 void		*process(void *ptr);
 
@@ -73,7 +75,9 @@ void		eat(t_philos **philo);
 char		*ft_strdup(const char *s1);
 size_t		ft_strlen(const char *s);
 int			ft_isdigit(int c);
-int			ft_atoi(const char *str);
+int			ft_atoi(const char *str, int *valid);
+int			handle_overflow(const char *str, int sign, int *valid);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
 // utils for philo
 

@@ -6,38 +6,37 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:35:35 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/20 18:00:26 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/22 21:39:15 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	check_args(char **av, int ac)
+int	check_args(char **av, int ac)
 {
 	int	i;
 	int	j;
+	int	valid;
 
 	i = 1;
 	j = -1;
+	valid = 1;
 	while (i < ac)
 	{
-		if (ft_atoi(av[i]) <= 0)
-		{
-			printf("should be positive integers above 0\n");
-			exit(EXIT_FAILURE);
-		}
+		if (ft_atoi(av[i], &valid) <= 0 || valid == 0)
+			return (printf("Only integers between 1 - 2147483647\n"), 1);
 		while (av[i][++j])
 		{
 			if (ft_isdigit(av[i][j]) == 0)
-			{
-				printf("only integers pls\n");
-				exit(EXIT_FAILURE);
-			}
+				return (printf("only integers pls\n"), 1);
 		}
+		valid = 1;
 		j = -1;
 		i++;
 	}
+	return (0);
 }
+
 
 void	create_them_threads(t_philos **philos, int nop)
 {
@@ -51,7 +50,7 @@ void	create_them_threads(t_philos **philos, int nop)
 		pthread_join(philos[i]->thread_id, NULL);
 }
 
-void	one_philo(char **av)
+int	one_philo(char **av)
 {
 	struct timeval	start;
 	struct timeval	temp;
@@ -60,29 +59,39 @@ void	one_philo(char **av)
 	gettimeofday(&temp, NULL);
 	printf("\e[33m%ld 1 has taken a fork\e[0m\n", whats_the_time(start));
 	while (((temp.tv_usec - start.tv_usec) / 1000 + \
-		(temp.tv_sec - start.tv_sec) * 1000) < ft_atoi(av[2]))
+		(temp.tv_sec - start.tv_sec) * 1000) < ft_atoi(av[2], 0))
 	{
 		usleep(100);
 		gettimeofday(&temp, NULL);
 	}
 	printf("\e[31m%ld 1 died\e[0m\n", whats_the_time(start));
-	exit(EXIT_SUCCESS);
+	return (0);
 }
 
 int	main(int ac, char **av)
 {
 	t_env		env;
 	t_philos	**philos;
+	int			valid;
 
 	if (ac < 5 || ac > 6)
-		(printf("%s\n", ARGERROR), exit(EXIT_FAILURE));
-	check_args(av, ac);
-	if (ft_atoi(av[1]) == 1)
-		one_philo(av);
-	init_env(&env, av, ac);
+		return (printf("%s\n", ARGERROR), 1);
+	if (check_args(av, ac) == 1)
+		return (1);
+	valid = 1;
+	ft_atoi(av[1], &valid);
+	if (ft_atoi(av[1], &valid) == 1 && valid == 1)
+		return (one_philo(av));
+	else
+		printf("what the fuck is valid\n");
+	if (init_env(&env, av, ac) == 1)
+	{
+		write(1, "Init error\n", 11);
+		return (1);
+	}
 	philos = init_philos(&env);
 	if (!philos)
-		(free(env.forks), exit(EXIT_FAILURE));
+		return (free(env.forks), 1);
 	create_them_threads(philos, env.nop);
 	free_all(philos, env);
 }
