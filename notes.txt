@@ -60,10 +60,11 @@ before submitting
 - fork mutex for each fork✅
 - ur not allowed to use exit dumbass❌
 - ./philo 200 400 200 200 causes died then printing✅
-	- delete print_smth and add prints where they need to be with the print_lock ✅
+	- delete print_smth and add prints where they need to be with the print_lock ❌
 	- i put the output with the issue in uhoh.txt✅
 	- NVM I FIXED THIS just check incase idk✅
 - ./philo 199 500 200 200 8 gave a late death❌❌✅✅
+- ./philo 198 500 200 200 8 sometimes dies late sometimes no one dies ❌
 - the fucking overflow ❌
 
 ✅❌

@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:52:59 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/19 17:38:04 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/23 15:29:46 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void	sleep_ms(long int sleep_ms, t_philos *philos)
 	start_time = whats_the_time(philos->env->start_time);
 	while (check_dead(philos) == 0 && whats_the_time(philos->env->start_time) - \
 			start_time < (unsigned long)sleep_ms)
-		usleep(100);
+		usleep(50);
 }

@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/22 21:39:54 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/23 23:55:30 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <sys/time.h>
 # include <pthread.h>
 # include <limits.h>
+# include "ft_printf_copy/ft_printf.h"
 
 # define ARGERROR "usage : ./philosophers [number_of_philosophers] \
 				[time_to_die] [time_to_eat] [time_to_sleep] \

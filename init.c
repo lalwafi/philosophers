@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:53:42 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/22 18:08:07 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/23 23:55:03 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	init_env(t_env *env, char **av, int ac)
 
 int	is_it_max(t_env *env, char **av, int ac)
 {
-	int valid;
+	int	valid;
 
 	valid = 1;
 	env->nop = ft_atoi(av[1], &valid);
@@ -45,7 +45,7 @@ int	is_it_max(t_env *env, char **av, int ac)
 	else
 		env->meal_count = -1;
 	if (valid == 0)
-		return (printf("Overflow\n"), 1);
+		return (ft_printf("Overflow\n"), 1);
 	return (0);
 }
 
@@ -55,18 +55,18 @@ int	init_mutex(t_env *env)
 
 	i = -1;
 	if (pthread_mutex_init(&env->print_lock, NULL))
-		return (printf("mutex error\n"), 1);
+		return (ft_printf("mutex error\n"), 1);
 	if (pthread_mutex_init(&env->check_lock, NULL))
 	{
 		pthread_mutex_destroy(&env->print_lock);
-		return (printf("mutex error\n"), 1);
+		return (ft_printf("mutex error\n"), 1);
 	}
 	env->fork_locks = malloc(sizeof(pthread_mutex_t) * env->nop);
 	while (++i < env->nop)
 	{
 		if (pthread_mutex_init(&env->fork_locks[i], NULL))
-			return (free_all(NULL, (*env)),\
-				printf("mutex error\n"), 1);
+			return (free_all(NULL, (*env)), \
+				ft_printf("mutex error\n"), 1);
 	}
 	return (0);
 }
