@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:36:07 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/23 23:55:30 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/26 17:31:16 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <sys/time.h>
 # include <pthread.h>
 # include <limits.h>
-# include "ft_printf_copy/ft_printf.h"
 
 # define ARGERROR "usage : ./philosophers [number_of_philosophers] \
 				[time_to_die] [time_to_eat] [time_to_sleep] \
@@ -39,6 +38,7 @@ typedef struct env
 	int				dead;
 	pthread_mutex_t	print_lock;
 	pthread_mutex_t	check_lock;
+	pthread_mutex_t	lock;
 }	t_env;
 
 typedef struct philos
@@ -66,8 +66,8 @@ void		*process(void *ptr);
 
 // process
 
-void		take_forks(t_philos **philos);
-void		take_not_zero(t_philos **philo);
+void		take_forks_left(t_philos **philo);
+void		take_forks_right(t_philos **philo);
 void		drop_forks(t_philos **philo);
 void		eat(t_philos **philo);
 

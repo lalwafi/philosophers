@@ -6,7 +6,7 @@
 /*   By: lalwafi <lalwafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:08:45 by lalwafi           #+#    #+#             */
-/*   Updated: 2024/11/22 17:08:26 by lalwafi          ###   ########.fr       */
+/*   Updated: 2024/11/25 20:13:51 by lalwafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	free_all(t_philos **philos, t_env env)
 		free(env.forks);
 	pthread_mutex_destroy(&env.print_lock);
 	pthread_mutex_destroy(&env.check_lock);
+	pthread_mutex_destroy(&env.lock);
 	if (env.fork_locks)
 	{
 		i = env.nop;
